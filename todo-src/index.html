@@ -27,8 +27,9 @@
       <h2>stuff i gotta do asap</h2>
       <!-- Amount of items in todo list and amount of incomplete items -->
       <p> You have {{todos.length}} items on your to-do list and {{(todos | filter:"incomplete").length}} things to do!</p>
-      
+
       <ul class="list-group">
+        <!-- Switches between input and span when edit is active.  Edit is false by default -->
         <!-- http://www.w3schools.com/css/css_float.asp -->
         <li class="list-group-item clearfix" ng-repeat="do in todos">
           <!-- Status btns -->
@@ -42,15 +43,18 @@
               <span class="glyphicon glyphicon-unchecked"></span>
             </label>
           </div><!-- /Status btns -->
-          <span class="{{do.status}}">{{do.task}}</span>
+          <span ng-show="!edit" class="{{do.status}}">{{do.task}}</span>
+          <input class= type="text" ng-model="do.task" ng-show="!!edit">
+
           <button class="btn btn-danger pull-right" type="button" ng-click="deleteItem(do)">
             <span class="glyphicon glyphicon-trash " aria-hidden="true"></span>
           </button>
+          <button class="btn btn-warning pull-right"  ng-click=" edit=!edit">{{!edit? "Edit" : "Commit Change"}}</button>
 
         </li>
       </ul>
     </div>
-    
+
   </body>
 
 </html>

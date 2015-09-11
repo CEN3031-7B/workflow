@@ -2,3 +2,7 @@
 body {
   background: green;
 }
+.complete {
+  text-decoration: line-through;
+  color: lightgray;
+}

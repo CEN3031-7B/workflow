@@ -25,13 +25,24 @@
         </div><!-- /input-group -->
 
       <h2>stuff i gotta do asap</h2>
-      <p> You have {{todos.length}} things to do!</p>
-
+      <!-- Amount of incomplete items -->
+      <p> You have {{(todos | filter:"incomplete").length}} things to do!</p>
+      
       <ul class="list-group">
         <!-- http://www.w3schools.com/css/css_float.asp -->
         <li class="list-group-item clearfix" ng-repeat="do in todos">
-
-          <span>{{do}}</span>
+          <!-- Status btns -->
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default" ng-if="do.status == 'complete'">
+              <input type="checkbox" autocomplete="off" ng-model="do.status" ng-true-value="'complete'" ng-false-value="'incomplete'"/>
+              <span class="glyphicon glyphicon-check"></span>
+            </label>
+            <label class="btn btn-success" ng-if="do.status == 'incomplete'">
+              <input type="checkbox" autocomplete="off" ng-model="do.status" ng-true-value="'complete'" ng-false-value="'incomplete'"/>
+              <span class="glyphicon glyphicon-unchecked"></span>
+            </label>
+          </div><!-- /Status btns -->
+          <span class="{{do.status}}">{{do.task}}</span>
           <button class="btn btn-danger pull-right" type="button" ng-click="deleteItem(do)">
             <span class="glyphicon glyphicon-trash " aria-hidden="true"></span>
           </button>
@@ -39,7 +50,7 @@
         </li>
       </ul>
     </div>
-
+    
   </body>
 
 </html>

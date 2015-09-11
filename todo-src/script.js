@@ -4,10 +4,12 @@ var myApp = angular.module('app', []);
 
 myApp.controller('MainCtrl', function ($scope){
   $scope.todos = [
-  {task: "Learn Angular", status:"incomplete"},
-  {task:"Learn node", status:"incomplete"}
+    {task: "Learn Angular", status:"incomplete"},
+    {task:"Learn node", status:"incomplete"}
   ];
   $scope.newItem = "";
+
+  $scope.edit = false;
 
   $scope.addItem = function(){
     console.log("in add");

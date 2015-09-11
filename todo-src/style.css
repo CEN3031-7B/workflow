@@ -1,7 +1,16 @@
 /* Styles go here */
 body {
-  background: green;
+  background: dimgray;
 }
+
+li {
+  width: auto;
+}
+
+.btn-warning {
+  margin-right: 5px;
+}
+
 .complete {
   text-decoration: line-through;
   color: lightgray;

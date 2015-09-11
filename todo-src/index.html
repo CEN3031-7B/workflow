@@ -25,8 +25,8 @@
         </div><!-- /input-group -->
 
       <h2>stuff i gotta do asap</h2>
-      <!-- Amount of incomplete items -->
-      <p> You have {{(todos | filter:"incomplete").length}} things to do!</p>
+      <!-- Amount of items in todo list and amount of incomplete items -->
+      <p> You have {{todos.length}} items on your to-do list and {{(todos | filter:"incomplete").length}} things to do!</p>
       
       <ul class="list-group">
         <!-- http://www.w3schools.com/css/css_float.asp -->

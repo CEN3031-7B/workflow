@@ -23,3 +23,7 @@ li {
   text-decoration: line-through;
   color: lightgray;
 }
+
+.btn-info {
+  margin-right: 5px;
+}

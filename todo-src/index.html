@@ -22,6 +22,11 @@
               <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             </button>
           </span>
+            <select ng-model="priority">
+            <option value='Today'>Today</option>
+            <option value='Tomorrow'>Tomorrow</option>
+            <option value='Future'>Next week or later</option>
+          </select>
         </div><!-- /input-group -->
 
       <h2>stuff i gotta do asap</h2>
@@ -50,6 +55,7 @@
             <span class="glyphicon glyphicon-trash " aria-hidden="true"></span>
           </button>
           <button class="btn btn-warning pull-right"  ng-click=" edit=!edit">{{!edit? "Edit" : "Commit Change"}}</button>
+            <button class="btn btn-info pull-right">{{priorities[$index]}}</button>
 
         </li>
       </ul>

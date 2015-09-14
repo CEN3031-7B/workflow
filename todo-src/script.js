@@ -29,7 +29,14 @@ myApp.controller('MainCtrl', function ($scope){
     $scope.todos.splice(index, 1);
       $scope.priorities.splice(index, 1);
   }
-
+  
+  $scope.deleteCompleted = function(index){
+  if(index > -1){
+    if($scope.todos[index].status == 'complete'){
+    $scope.todos.splice(index, 1);
+    $scope.priorities.splice(index, 1);}
+  return $scope.deleteCompleted(index-1);}
+  }
 });
 
 /*************************
